@@ -9,11 +9,10 @@ import { HashRouter as Router, Switch, Route, Link } from "react-router-dom";
 // import About from './pages/About/index';
 import 'normalize.css';
 import fastclick from 'fastclick';
+// import { routes  } from './router/index';
 
 
 fastclick.attach(document.body);
-
-{/* <App /> */}
 
 function Home() {
   return <h2>Home</h2>;
@@ -27,29 +26,24 @@ function Users() {
   return <h2>Users</h2>;
 }
 
-function Messages(props) {
-  return <h2>Messages {props.params.id}</h2>;
-}
-
 ReactDOM.render(
   <React.StrictMode>
     <Router>
-      {/* <Route path='/'> */}
-        {/* <App> */}
+      <Route path='/'>
+        <App>
           <Switch>
-            <Route path="/about">
-              <About />
-            </Route>
-            <Route path="/users">
-              <Users />
-            </Route>
-            <Route path="/">
+            <Route path="/index">
               <Home />
             </Route>
+            <Route path="/About">
+              <About />
+            </Route>
+            <Route path="/">
+              <Users />
+            </Route>
           </Switch>
-        {/* </App> */}
-        
-      {/* </Route> */}
+        </App>
+      </Route>
     </Router>
   </React.StrictMode>,
   document.getElementById('root')
