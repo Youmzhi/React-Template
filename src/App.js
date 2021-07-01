@@ -33,7 +33,7 @@ export default class App extends React.Component {
   render() {
     return (
       <div>
-        <div className="App">
+        {/* <div className="App">
           <header className="App-header">
             <img src={logo} className="App-logo" alt="logo" />
             <p>
@@ -48,12 +48,12 @@ export default class App extends React.Component {
               Learn React
             </a>
           </header>
-        </div>
+        </div> */}
         <h1>App</h1>
         <ul>
-          <li><Link to="/">home</Link></li>
+          <li><Link to="/index">home</Link></li>
           <li><Link to="/about">about</Link></li>
-          <li><Link to="/users">users</Link></li>
+          <li><Link to="/downlaodapp">download</Link></li>
         </ul>
         {this.props.children}
       </div>
