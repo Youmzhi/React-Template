@@ -19,7 +19,7 @@ const routes = (
       <Route path="/about">
         <About />
       </Route>
-      <Route path="/downlaodapp">
+      <Route path="/downloadapp">
         <DownloadApp />
       </Route>
     </Switch>

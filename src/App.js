@@ -53,7 +53,7 @@ export default class App extends React.Component {
         <ul>
           <li><Link to="/index">home</Link></li>
           <li><Link to="/about">about</Link></li>
-          <li><Link to="/downlaodapp">download</Link></li>
+          <li><Link to="/downloadapp">download</Link></li>
         </ul>
         {this.props.children}
       </div>
