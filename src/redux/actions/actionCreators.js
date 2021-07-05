@@ -9,7 +9,7 @@ export const addItemAction = ()=>({
     type:ADD_ITEM
 })
 
-export const deleteItemAction = (index)=>({
+export const deleteItemAction = (value)=>({
     type:DELETE_ITEM,
-    index
+    value
 })

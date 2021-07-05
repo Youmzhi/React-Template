@@ -14,7 +14,7 @@ fastclick.attach(document.body);
 
 
 ReactDOM.render(
-  <React.StrictMode>
+  // <React.StrictMode>
     <Router>
       <Route path='/'>
         <App>
@@ -23,8 +23,8 @@ ReactDOM.render(
           }
         </App>
       </Route>
-    </Router>
-  </React.StrictMode>,
+    </Router>,
+  // </React.StrictMode>,
   document.getElementById('root')
 );
 

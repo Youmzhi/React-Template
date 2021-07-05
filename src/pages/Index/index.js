@@ -7,7 +7,6 @@ import IndexUi from './IndexUi'
 export default class Index extends React.Component {
   constructor(props) {
     super(props)
-    console.log(store.getState())
     this.state = store.getState()  // 把redux仓库store值赋值到this.state
     this.changeInputValue = this.changeInputValue.bind(this)
     this.storeChange = this.storeChange.bind(this)
@@ -25,7 +24,7 @@ export default class Index extends React.Component {
     store.dispatch(action)
   }
   storeChange() {
-    this.setState(store.getState)
+    this.setState(store.getState())
   }
   clickBtn() {
     // const action = {
@@ -39,6 +38,7 @@ export default class Index extends React.Component {
     //   type: DELETE_ITEM,
     //   value: index
     // }
+    console.log(index)
     const action = deleteItemAction(index)
     store.dispatch(action)
   }
