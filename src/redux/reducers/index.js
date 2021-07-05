@@ -1,4 +1,6 @@
-// 业务管理能力 reducers
+// 业务管理能力 reducers (必须是纯函数)
+
+import { CHANGE_INPUT , ADD_ITEM , DELETE_ITEM } from '../../redux/actions/actionTypes'
 const defaultState = {
   inputValue: 'text store',
   list: [
@@ -10,20 +12,20 @@ const defaultState = {
 export default (state = defaultState, action)=> {  // 暴露出去一个方法
   console.log(state, action)
   // reducer里只能接受state不能改变state(重点)
-  if (action.type === 'CHANGE_INPUT') {
+  if (action.type === CHANGE_INPUT) {
     // 进行仓库数据改变
     let newState = JSON.parse(JSON.stringify(state))
     newState.inputValue = action.value
     return newState
   }
-  if (action.type === 'ADD_ITEM') {  // 新增
+  if (action.type === ADD_ITEM) {  // 新增
     // 进行仓库数据改变
     let newState = JSON.parse(JSON.stringify(state))
     newState.list.push(newState.inputValue)
     newState.inputValue = ''
     return newState
   }
-  if (action.type === 'DELETE_ITEM') {  // 移除
+  if (action.type === DELETE_ITEM) {  // 移除
     // 进行仓库数据改变
     let newState = JSON.parse(JSON.stringify(state))
     newState.list.splice(action.value, 1)
