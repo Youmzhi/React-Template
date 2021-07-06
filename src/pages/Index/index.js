@@ -1,8 +1,9 @@
 import React from "react";
 import store from "../../redux/store/index"
 // import { CHANGE_INPUT , ADD_ITEM , DELETE_ITEM } from '../../redux/actions/actionTypes'
-import { changeInputAction  , addItemAction  , deleteItemAction } from '../../redux/actions/actionCreators'
+import { changeInputAction  , addItemAction  , deleteItemAction, getList } from '../../redux/actions/actionCreators'
 import IndexUi from './IndexUi'
+import axios from 'axios'
 
 export default class Index extends React.Component {
   constructor(props) {
@@ -13,6 +14,10 @@ export default class Index extends React.Component {
     this.clickBtn = this.clickBtn.bind(this)
     this.deleteItem = this.deleteItem.bind(this)
     store.subscribe(this.storeChange)   // redux订阅模式组件改变 (Redux的状态)
+  }
+  componentDidMount(){
+    const action = getList()
+    store.dispatch(action)
   }
   changeInputValue(e) {  
     console.log(e.target.value)

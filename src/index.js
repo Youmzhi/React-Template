@@ -8,6 +8,8 @@ import { HashRouter as Router, Route} from "react-router-dom";
 import 'normalize.css';
 import fastclick from 'fastclick';
 import { routes  } from './router/index';
+import { Provider } from 'react-redux';
+import store from './redux/store'
 
 
 fastclick.attach(document.body);
@@ -15,6 +17,7 @@ fastclick.attach(document.body);
 
 ReactDOM.render(
   // <React.StrictMode>
+  <Provider store={store}>
     <Router>
       <Route path='/'>
         <App>
@@ -23,7 +26,8 @@ ReactDOM.render(
           }
         </App>
       </Route>
-    </Router>,
+    </Router>
+  </Provider>,
   // </React.StrictMode>,
   document.getElementById('root')
 );
