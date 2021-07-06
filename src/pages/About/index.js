@@ -31,5 +31,6 @@ const mapDispatchToProps = (dispatch) =>{   // 映射关系 action
 // 它们定义了 UI 组件的业务逻辑。
 // 前者负责输入逻辑，即将state映射到 UI 组件的参数（props）。
 // 后者负责输出逻辑，即将用户对 UI 组件的操作映射成 Action。
+// connect的作用是把UI组件（无状态组件）和业务逻辑代码的分开，然后通过connect再链接到一起，让代码更加清晰和易于维护。这也是React-Redux最大的特点
 export default connect(mapStateToProps, mapDispatchToProps)(About)  // 连接器
 
